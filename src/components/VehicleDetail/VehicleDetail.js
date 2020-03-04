@@ -1,6 +1,6 @@
 import React from 'react';
 import './VehicleDetail.css';
-import { Row, Col, Media } from 'reactstrap';
+import { Row, Col } from 'reactstrap'; // , Media
 
 class VehicleDetail extends React.Component {
     constructor(props) {
@@ -14,7 +14,7 @@ class VehicleDetail extends React.Component {
         return (<div>
             <Row>
                 <Col>
-                    <img className="detailImage" src={selectedVehicleData.thumbnail} />
+                    <img className="detailImage" src={selectedVehicleData.thumbnail} alt="" />
                 </Col>
             </Row>
             <Row>

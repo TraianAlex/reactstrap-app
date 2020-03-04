@@ -3,6 +3,10 @@ By Bruce M. Van Horn II
 
 In the course, we cover setting up this project from scratch.  As part of that process, a readme file gets automatically generated
 by create-react-app.  Since there's a lot of good info in there, I'm going to leave it intact.
+
+npm install -g json-server
+json-server --port 3001 generate.js
+
 ----------------------------------------------------------------------------------------------
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 

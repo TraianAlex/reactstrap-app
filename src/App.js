@@ -11,47 +11,47 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 import Axios from 'axios';
 
 class App extends Component {
-//This is a modification for demo purposes only
+  //This is a modification for demo purposes only
   constructor(props) {
     super(props);
-    this.state={vehicleData: null}
+    this.state = { vehicleData: null }
   }
 
-  componentDidMount(){
-    let foo = "bar";
-    if(sessionStorage.getItem("vehicleData")){
-        const data = JSON.parse(sessionStorage.getItem("vehicleData"));
-        this.setState({vehicleData: data});
+  componentDidMount() {
+    // let foo = "bar";
+    if (sessionStorage.getItem("vehicleData")) {
+      const data = JSON.parse(sessionStorage.getItem("vehicleData"));
+      this.setState({ vehicleData: data });
     } else {
-    Axios
-      .get('http://localhost:3001/vehicles/')
-      .then(res => {
+      Axios
+        .get('http://localhost:3001/vehicles/')
+        .then(res => {
           //store it to session storage
           sessionStorage.setItem("vehicleData", JSON.stringify(res.data));
-          this.setState({vehicleData: res.data});
+          this.setState({ vehicleData: res.data });
         })
-      //.then(res => console.log(res.data))
-      .catch(err => console.log(err));
+        //.then(res => console.log(res.data))
+        .catch(err => console.log(err));
+    }
   }
-}
   render() {
-    
-    if(this.state.vehicleData){
-    return (
-      <Router>
-        <div className="App">
-          <TopNav vehicleData = {this.state.vehicleData} />
-          <div className="contentArea">
-            <Route exact path='/' render={(props) => <Home {...props} vehicleData={this.state.vehicleData} />} />
-            <Route path='/detail/:selectedVehicle' render={(props) =><VehicleDetail {...props} vehicleData={this.state.vehicleData} />} />
-            <Route path='/find-a-dealer' component={DealerLocator} />
-            <Route path='/build-and-price' render={(props)=><BuildAndPrice {...props} vehicleData={this.state.vehicleData} />} />
-            <Route path='/schedule-test-flight' component={TestFlightForm} />
+
+    if (this.state.vehicleData) {
+      return (
+        <Router>
+          <div className="App">
+            <TopNav vehicleData={this.state.vehicleData} />
+            <div className="contentArea">
+              <Route exact path='/' render={(props) => <Home {...props} vehicleData={this.state.vehicleData} />} />
+              <Route path='/detail/:selectedVehicle' render={(props) => <VehicleDetail {...props} vehicleData={this.state.vehicleData} />} />
+              <Route path='/find-a-dealer' component={DealerLocator} />
+              <Route path='/build-and-price' render={(props) => <BuildAndPrice {...props} vehicleData={this.state.vehicleData} />} />
+              <Route path='/schedule-test-flight' component={TestFlightForm} />
+            </div>
+            <Footer />
           </div>
-          <Footer />  
-        </div>
-        
-      </Router>);
+
+        </Router>);
     } else {
       return <h4> Loading Data</h4>
     }

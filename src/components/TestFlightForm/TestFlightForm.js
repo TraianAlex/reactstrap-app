@@ -1,8 +1,8 @@
 import React from 'react';
 import Axios from 'axios';
 import './TestFlightForm.css';
-import { Alert, InputGroup, InputGroupAddon, InputGroupText, Card, CardImg, CardText, CardBody,
-    CardTitle, CardSubtitle, Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
+import { Alert, InputGroup, InputGroupAddon, InputGroupText, Card, CardText, CardBody,
+    CardTitle, CardSubtitle, Button, Form, FormGroup, Input } from 'reactstrap'; // CardImg,Label,FormText
 
 class TestFlightForm extends React.Component {
     constructor(props) {

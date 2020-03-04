@@ -97,6 +97,7 @@ class DealerLocator extends React.Component {
                                         {key} <Badge pill>{this.state.stateCounter[key]}</Badge>
                                         </ListGroupItem>)
                                     }
+                                return '';
                                 }, this)
                             }
                         </ListGroup>

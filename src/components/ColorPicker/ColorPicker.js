@@ -1,10 +1,10 @@
 import React from 'react';
 import './ColorPicker.css';
-import classnames from 'classnames';
+// import classnames from 'classnames';
 class ColorPicker extends React.Component {
-    constructor(props) {
-        super(props);
-    }
+    // constructor(props) {
+    //     super(props);
+    // }
 
     render() {
         //find the selected model

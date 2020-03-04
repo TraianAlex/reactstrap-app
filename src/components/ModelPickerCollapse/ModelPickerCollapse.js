@@ -3,11 +3,11 @@ import './ModelPickerCollapse.css';
 import {
     Collapse,
     Media,
-    Button,
+    // Button,
     Card,
     CardBody,
-    Row,
-    Col,
+    // Row,
+    // Col,
     Nav,
     NavItem,
     NavLink
